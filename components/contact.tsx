@@ -20,7 +20,7 @@ export function Contact() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>mahmoud.amri@gmail.com</span>
+                <span>mahmoud.amri@enicar.ucar.tn</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
@@ -40,15 +40,15 @@ export function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form action="https://formspree.io/f/mldljlel" method="POST" className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="First Name" />
-                  <Input placeholder="Last Name" />
+                  <Input name="firstName" placeholder="First Name" required />
+                  <Input name="lastName" placeholder="Last Name" required />
                 </div>
-                <Input type="email" placeholder="Email Address" />
-                <Input placeholder="Subject" />
-                <Textarea placeholder="Your Message" rows={4} />
-                <Button className="w-full">Send Message</Button>
+                <Input type="email" name="email" placeholder="Email Address" required />
+                <Input name="subject" placeholder="Subject" required />
+                <Textarea name="message" placeholder="Your Message" rows={4} required />
+                <Button type="submit" className="w-full">Send Message</Button>
               </form>
             </CardContent>
           </Card>
@@ -57,3 +57,4 @@ export function Contact() {
     </section>
   )
 }
+
